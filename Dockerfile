@@ -11,6 +11,10 @@ RUN pip install -r /tmp/requirements.txt
 RUN mkdir /etc/luigi
 ADD client.cfg /etc/luigi/client.cfg
 
+RUN mkdir /var/log/luigid
+ADD logrotate.cfg /etc/logrotate.d/luigid
+VOLUME /var/log/luigid
+
 RUN mkdir /etc/service/luigid
 ADD luigid.sh /etc/service/luigid/run
 EXPOSE 8082
