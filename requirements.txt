@@ -1,2 +1,2 @@
-luigi==1.0.19
-tornado==4.0.2
+luigi==1.1.2
+tornado==4.1
