@@ -8,6 +8,9 @@ RUN apt-get update && \
 ADD requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt
 
+RUN mkdir /etc/luigi
+ADD client.cfg /etc/luigi/client.cfg
+
 RUN mkdir /etc/service/luigid
 ADD luigid.sh /etc/service/luigid/run
 EXPOSE 8082
